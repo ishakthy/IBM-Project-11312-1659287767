@@ -1,0 +1,81 @@
+{% extends "base.html" %} {% block content %}
+<style>
+    body
+    {
+    padding: 10px;
+    }
+    .bar
+    {
+        margin:0px;
+        box-sizing:border-box;
+        padding:20px;
+        background-color:rgba(194, 71, 71, 0.737);
+        opacity:0.6;
+        color:rgba(142, 6, 6, 0.598);
+        font-family:'Roboto',sans-serif;
+        font-size: 20px;
+    }
+    a
+    {
+        color:rgb(217, 203, 203);
+        float:right;
+        text-decoration:none;
+        font-style:normal;
+        padding-right:10px;
+        padding-left: 10px;
+    }
+    a:hover
+    {
+        color:rgb(13, 13, 13);
+        font-size:21px;
+        padding-left:10px;
+        padding-right: 10px;
+    }
+    body
+    {
+      background-image: url('https://wallpapers.com/images/high/red-line-heartbeat-3czzk9jpowrogyqp.webp');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    .heading
+    {
+        padding:10px;
+        color:rgb(13, 13, 13);
+        font-family:'Times New Roman';
+        font-size: 40px;
+        text-align: center;
+        padding: 20px;
+    }
+    </style>  
+    <div class="heading">
+        ECG Arrhythmia Classification
+    </div>
+
+<div>
+    <form action="" id="upload-file" method="post" enctype="multipart/form-data">
+    <label for="imageUpload" class="upload-label">
+            Choose an ECG image
+        </label>
+        <input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3>
+        <span id="result" style="font-size:17px;"> </span>
+    </h3>
+
+</div>
+
+{% endblock %}
